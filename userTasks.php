@@ -11,7 +11,8 @@ $usrObj = new User();
 // $username,$password,$email,$fullname,$userPosition
 if(isset($_POST['submit']) || isset($_GET['task']))
 {
-        switch ($_REQUEST['task']) {
+    
+        switch ($_REQUEST['task'] || $_POST['submit'] ) {
             case "login":
                 $username = fixTags(trim($_POST['username'])); //Hem email hem kullanıcı adı ile giriş için
                 $password = fixTags(trim(md5(sha1($_POST['password']))));
